@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 import { fetchDetail } from "../../Features/DetailSlice";
 import { AiFillFilter } from "react-icons/ai";
 import { RxCross2 } from "react-icons/rx";
+import { NavLink } from "react-router-dom";
 function HotelCard() {
   const data = useSelector((state) => state.hotel.data);
   const [filterToggle, setFilter] = useState(false);
@@ -87,7 +88,7 @@ function HotelCard() {
                     dispatch(fetchDetail(item));
                   }}
                 >
-                  BOOK NOW
+                  <NavLink to={"/description"}> BOOK NOW</NavLink>
                 </button>
               </HotelBook>
             ))}
