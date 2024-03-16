@@ -10,10 +10,10 @@ function TabBar() {
     <div className="flex md:flex-row  justify-evenly min-h-28 items-center md:shadow-2xl w-full flex-wrap gap-10  px-5 py-2 md:rounded-2xl  bg-white  z-10">
       <NavLink
         to="/hotel"
-        className={`flex flex-col items-center text-lg text-center md:w-30 w-20 mx-3 ${
+        className={`flex flex-col items-center text-lg text-center md:w-40 w-20 mx-3 ${
           location.pathname === "/hotel" || location.pathname === "/"
             ? "scale-110 font-bold text-blue-800 border-black border-b-4"
-            : "text-black"
+            : "text-black hover:bg-gray-200 hover:border-gray-200 hover:rounded-xl "
         }`}
       >
         <LiaHotelSolid className="text-3xl mb-1" /> Hotels
@@ -22,10 +22,10 @@ function TabBar() {
       <NavLink
         to={"/flight"}
         className={({ isActive }) =>
-          `  flex flex-col items-center text-lg text-center md:w-30 w-20 mx-3 ${
+          `  flex flex-col  items-center text-lg text-center md:w-40 w-20 mx-3 ${
             isActive
               ? "scale-110 font-bold text-blue-800   border-b-4 border-black"
-              : "text-black"
+              : "text-black  hover:bg-gray-200 hover:border-gray-200 hover:rounded-xl "
           }`
         }
       >
@@ -35,15 +35,15 @@ function TabBar() {
       <NavLink
         to={"/transportation"}
         className={({ isActive }) =>
-          `  flex flex-col items-center text-lg text-center md:w-30 w-20 mx-3 ${
+          `  flex flex-col items-center text-lg text-center md:w-40 w-20 mx-3 ${
             isActive
               ? "scale-110 font-bold text-blue-800   border-b-4 border-black"
-              : "text-black"
+              : "text-black  hover:bg-gray-200 hover:border-gray-200 hover:rounded-xl hover:p-1 "
           }`
         }
       >
         <FaCarAlt className="  text-3xl mb-1" />
-        Transpotation
+        Transportation
       </NavLink>
     </div>
   );

@@ -26,14 +26,17 @@ function Nav() {
           </div>
         </div>
       )} */}
-      <div className="bg-blue-950 w-full h-16 flex  justify-between items-center md:px-28 ps-2 font-bold tracking-normal text-white text-2xl sticky top-0 z-20">
+      <div className="bg-blue-800 w-full h-16 flex  justify-between items-center md:px-28 ps-2 font-bold tracking-normal text-white text-2xl sticky top-0 z-20">
         <div className="flex flex-row gap-2 sm:gap-5 items-center">
           {/* <CiMenuFries
             className="block md:hidden text-white"
             onClick={handleMenuClick}
           /> */}
-          <p className="tracking-wide " style={{ fontFamily: "Protest" }}>
-            Sramtravel.com
+          <p
+            className="tracking-wide font-customFont"
+            // style={{ fontFamily: "BlinkMacSystemFont" }}
+          >
+            SramTravels
           </p>
         </div>
 
