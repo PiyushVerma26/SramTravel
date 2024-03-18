@@ -8,12 +8,18 @@ import { fetchDetail } from "../../Features/DetailSlice";
 import { AiFillFilter } from "react-icons/ai";
 import { RxCross2 } from "react-icons/rx";
 import { NavLink } from "react-router-dom";
+import Loading from "../Loading/Loading";
 function HotelCard() {
-  const data = useSelector((state) => state.hotel.data);
+  const{ data, isFetching} = useSelector((state) => state.hotel);
   const [filterToggle, setFilter] = useState(false);
   const dispatch = useDispatch();
+  
+
   return (
     <>
+    {
+      isFetching && <Loading/>
+    }
       {filterToggle && (
         <div
           style={{ zIndex: "50" }}

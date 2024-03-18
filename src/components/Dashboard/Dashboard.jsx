@@ -6,7 +6,11 @@ import HotelSearch from "../Search/HoelSearch";
 import { useSelector } from "react-redux";
 
 function Dashboard() {
-  const selector = useSelector((state) => state.hotel.dataFetched);
+  const { dataFetched: hotelData } = useSelector((state) => state.hotel);
+  const { dataFetched: flightData } = useSelector((state) => state.flight);
+  const { dataFetched: transportData } = useSelector((state) => state.transport);
+  
+ 
 
   return (
     <>
@@ -19,7 +23,9 @@ function Dashboard() {
         </div>
       </div>
       <div className="md:pt-10 pt-4 bg-slate-50 px-4 pb-4">
-        {selector ? <HotelSearch /> : <Trending />}
+       {hotelData ? <HotelSearch /> : <Trending />}
+ 
+        
       </div>
     </>
   );

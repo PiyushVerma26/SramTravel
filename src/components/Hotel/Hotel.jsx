@@ -26,10 +26,10 @@ function Hotel() {
       </div>
 
       <form
-        className="flex flex-row justify-evenly items-center flex-wrap mt-8 border-white border-4 py-8 rounded-xl md:gap-4 gap-8 px-1"
+        className="flex flex-row justify-evenly items-center flex-wrap mt-8 border-white border-4 py-8 rounded-xl md:gap-4 gap-8 md:px-1 px-5"
         onSubmit={handleSubmit}
       >
-        <div className="flex flex-col justify-center ">
+        <div className="flex flex-col justify-center w-full md:w-auto">
           <label
             htmlFor="destination"
             className="font-bold text-lg ml-1 text-blue-950"
@@ -40,10 +40,10 @@ function Hotel() {
             type="text"
             id="destination"
             placeholder="Enter Destination"
-            className="py-2 rounded-md px-5 mt-1 w-56 text-xl font-semibold"
+            className="py-2 rounded-md px-5 mt-1 md:w-56 text-xl font-semibold w-full"
           />
         </div>
-        <div className="flex flex-col justify-center  ">
+        <div className="flex flex-col justify-center w-full md:w-auto ">
           <label
             htmlFor="checkInDate"
             className="font-bold text-lg ml-1 text-blue-950"
@@ -53,10 +53,10 @@ function Hotel() {
           <input
             type="date"
             id="checkInDate"
-            className="py-2 rounded-md px-5 mt-1 w-56 text-xl font-semibold"
+            className="py-2 rounded-md px-5 mt-1 md:w-56 text-xl font-semibold w-full"
           />
         </div>
-        <div className="flex flex-col justify-center    ">
+        <div className="flex flex-col justify-center  w-full md:w-auto  ">
           <label
             htmlFor="checkOutDate"
             className="font-bold text-lg ml-1 text-blue-950"
@@ -66,10 +66,10 @@ function Hotel() {
           <input
             type="date"
             id="checkOutDate"
-            className="py-2 rounded-md px-5 mt-1 w-56 text-xl font-semibold"
+            className="py-2 rounded-md px-5 mt-1 md:w-56 text-xl font-semibold w-full  "
           />
         </div>
-        <div className="flex flex-col justify-center    ">
+        <div className="flex flex-col justify-center w-full md:w-auto">
           <label
             htmlFor="roomsAndGuests"
             className="font-bold text-lg ml-1 text-blue-950"
@@ -88,9 +88,9 @@ function Hotel() {
             <option>&#x1F6D2; Rooms</option>
           </select>
         </div>
-        <div className="flex flex-col justify-center   items-center ">
+        <div className="flex flex-col justify-center w-full md:w-auto items-center ">
           <button
-            className="bg-blue-950 text-white px-8 text-center py-3 rounded-xl md:mt-6 text-xl"
+            className="bg-blue-950 text-white px-8 text-center py-3 rounded-xl md:mt-6 text-xl w-full"
             type="submit"
           >
             Check Availability
