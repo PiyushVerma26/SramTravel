@@ -14,6 +14,14 @@ const initialState = {
 const hotelSlice = createSlice({
   name: 'hotel', 
   initialState,
+  reducers:{
+resetState:(state )=>{
+  state.isFetching = false;
+      state.data = null;
+      state.error = '';
+      state.dataFetched = false;
+}
+  },
   extraReducers: (builder) => {
     builder.addCase(searchHotel.fulfilled, (state, action) => {
       state.isFetching = false;
@@ -34,3 +42,4 @@ const hotelSlice = createSlice({
 });
 
 export default hotelSlice.reducer;
+export const { resetState } = hotelSlice.actions;

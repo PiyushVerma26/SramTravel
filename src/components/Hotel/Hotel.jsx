@@ -2,12 +2,14 @@ import React from "react";
 import FormCard from "../FormCard";
 import { useDispatch } from "react-redux";
 import { searchHotel } from "../../Features/SearchHotelSlice";
+import { resetflight } from "../../Features/searchFlightSlice";
 
 function Hotel() {
   const dispatch = useDispatch();
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    dispatch(resetflight())
     dispatch(searchHotel());
   };
 
@@ -69,7 +71,7 @@ function Hotel() {
             className="py-2 rounded-md px-5 mt-1 md:w-56 text-xl font-semibold w-full  "
           />
         </div>
-        <div className="flex flex-col justify-center w-full md:w-auto">
+        <div className="flex flex-col justify-center w-full md:w-56">
           <label
             htmlFor="roomsAndGuests"
             className="font-bold text-lg ml-1 text-blue-950"
