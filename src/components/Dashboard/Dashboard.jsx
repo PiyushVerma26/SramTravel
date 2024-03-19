@@ -2,13 +2,15 @@ import React from "react";
 import TabBar from "../TabBar/TabBar";
 import { Outlet } from "react-router-dom";
 import Trending from "../Destinations/Trending";
-import HotelSearch from "../Search/HoelSearch"; 
-import { useSelector } from "react-redux"; 
+import HotelSearch from "../Search/HoelSearch";
+import { useSelector } from "react-redux";
 import FlightCard from "../FlightSearch/FlightCard";
+import TransportSearch from "../TransportSearch/TransportSearch";
 
 function Dashboard() {
   const { dataFetched: hotelData } = useSelector((state) => state.hotel);
   const { dataFetched: flightData } = useSelector((state) => state.flight);
+  const { dataFetched: transportData } = useSelector((state) => state.transport);
 
   return (
     <>
@@ -21,8 +23,10 @@ function Dashboard() {
         </div>
       </div>
       <div className="md:pt-10 pt-4 bg-slate-50 px-4 pb-4">
+        {!flightData && !hotelData && !transportData && <Trending />}
         {flightData && <FlightCard />}
-        {hotelData ? <HotelSearch /> : <Trending />}
+        {hotelData && <HotelSearch />}
+        {transportData && <TransportSearch/>}
       </div>
     </>
   );

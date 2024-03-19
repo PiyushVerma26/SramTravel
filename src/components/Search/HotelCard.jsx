@@ -10,7 +10,7 @@ import { RxCross2 } from "react-icons/rx";
 import { NavLink } from "react-router-dom";
 import Loading from "../Loading/Loading";
 function HotelCard() {
-  const{ data, isFetching} = useSelector((state) => state.hotel);
+  const{ data, isFetching,dataFetched} = useSelector((state) => state.hotel);
   const [filterToggle, setFilter] = useState(false);
   const dispatch = useDispatch();
   
@@ -94,7 +94,7 @@ function HotelCard() {
                     dispatch(fetchDetail(item));
                   }}
                 >
-                  <NavLink to={"/description"}> BOOK NOW</NavLink>
+                 {isFetching?<p>Loading</p>: <NavLink to={"/description"}> BOOK NOW</NavLink>}
                 </button>
               </HotelBook>
             ))}

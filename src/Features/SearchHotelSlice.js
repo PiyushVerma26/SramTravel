@@ -16,7 +16,7 @@ const hotelSlice = createSlice({
   initialState,
   reducers:{
 resetState:(state )=>{
-  state.isFetching = false;
+      state.isFetching = false;
       state.data = null;
       state.error = '';
       state.dataFetched = false;
