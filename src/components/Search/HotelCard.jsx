@@ -13,23 +13,17 @@ function HotelCard() {
   const { data } = useSelector((state) => state.hotel);
   const { isData } = useSelector((state) => state.detail);
   const [filterToggle, setFilter] = useState(false);
-  const [isLoading, setLoading] = useState(isData);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    setLoading(isData);
-  }, [isData]);
-
   const handleBookNow = (item) => {
     dispatch(fetchDetail(item));
-    setLoading(true);
+  
     navigate('/description');
   };
 
   return (
     <div className="relative">
-      {isLoading && <Loading />}
       {filterToggle && (
         <div
           style={{ zIndex: "50" }}
