@@ -7,12 +7,12 @@ import Layout from "./Layout.jsx";
 import Login from "./components/Register-And-Login/Login.jsx";
 import Register from "./components/Register-And-Login/Register.jsx";
 import { Provider } from "react-redux";
-
+import PrivacyPolicy from "./components/Privacy/PrivacyPolicy.jsx";
 import Hotel from "./components/Hotel/Hotel.jsx";
 import Dashboard from "./components/Dashboard/Dashboard.jsx";
 import Flight from "./components/flights/Flight.jsx";
 import Transportation from "./components/Transport/Transportation.jsx";
-
+import Faq from "./components/Faq/Faq.jsx";
 import HotelDetail from "./components/Search/HotelDetail.jsx";
 
 const router = createBrowserRouter([
@@ -56,6 +56,14 @@ const router = createBrowserRouter([
         path: "/sign-up",
         element: <Register />,
       },
+      {
+        path: "/faq",
+        element: <Faq />,
+      },
+      {
+        path: "/privacy-policy",
+        element: <PrivacyPolicy />,
+      },
     ],
   },
 ]);
@@ -65,5 +73,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <Provider store={store}>
       <RouterProvider router={router} />
     </Provider>
-  </React.StrictMode>
+  </React.StrictMode>,
 );
