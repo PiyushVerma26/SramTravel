@@ -5,6 +5,7 @@ import { searchFlight } from "../../Features/searchFlightSlice";
 import { resetState } from "../../Features/SearchHotelSlice"; 
 
 function Flight() {
+  const { isFetching } = useSelector((state) => state.flight)
   const dispatch = useDispatch();
   const handleSubmit = event => {
     event.preventDefault();
@@ -90,7 +91,7 @@ function Flight() {
               className="bg-blue-950 text-white px-8 text-center py-3 rounded-xl md:mt-6 text-xl w-full"
               type="submit"
             >
-              Check Flight Status
+            	{isFetching ? "Loading..." : "Check Flight Status"}
             </button>
           </div>
         </form>
