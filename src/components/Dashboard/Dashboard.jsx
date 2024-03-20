@@ -10,7 +10,9 @@ import TransportSearch from "../TransportSearch/TransportSearch";
 function Dashboard() {
   const { dataFetched: hotelData } = useSelector((state) => state.hotel);
   const { dataFetched: flightData } = useSelector((state) => state.flight);
-  const { dataFetched: transportData } = useSelector((state) => state.transport);
+  const { dataFetched: transportData } = useSelector(
+    (state) => state.transport,
+  );
 
   return (
     <>
@@ -26,7 +28,19 @@ function Dashboard() {
         {!flightData && !hotelData && !transportData && <Trending />}
         {flightData && <FlightCard />}
         {hotelData && <HotelSearch />}
-        {transportData && <TransportSearch/>}
+        {transportData && <TransportSearch />}
+      </div>
+      <div className="flex flex-col items-center p-5 bg-blue-950 font-customFont text-white">
+        <h1 className="text-3xl">Save time and money!</h1>
+        <p>Sign up to get best deals...</p>
+        <div className="flex md:flex-row flex-col gap-2 mt-4 font-customFont flex-wrap mb-3">
+          <input
+            className="px-5 py-2 rounded text-center md:min-w-[400px]"
+            type="text"
+            placeholder="Your email address"
+          />
+          <button className="px-12  bg-blue-700 rounded py-2">Subscribe</button>
+        </div>
       </div>
     </>
   );
