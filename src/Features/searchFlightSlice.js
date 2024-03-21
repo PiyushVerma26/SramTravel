@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-export const searchFlight = createAsyncThunk("fetchFlights", async () => {
+export const searchFlight = createAsyncThunk("fetchFlights", async (data) => {
   const response = await fetch("https://jsonplaceholder.typicode.com/posts");
   return response.json();
 });

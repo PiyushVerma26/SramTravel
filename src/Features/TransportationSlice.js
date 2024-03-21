@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-export const searchTransport = createAsyncThunk("fetchTransport", async () => {
+export const searchTransport = createAsyncThunk("fetchTransport", async (data) => {
   const response = await fetch("https://jsonplaceholder.typicode.com/posts");
   return response.json();
 });
@@ -15,6 +15,14 @@ const initialState = {
 const transportSlice = createSlice({
   name: "transport",
   initialState,
+  reducers:{
+    resetTransport:(state )=>{
+      state.isFetching= false,
+      state.error= "",
+      state.data= null,
+      state.dataFetched = false
+    }
+  },
   extraReducers: (builder) => {
     builder.addCase(searchTransport.pending, (state) => {
       state.dataFetched = false;
@@ -35,5 +43,5 @@ const transportSlice = createSlice({
   },
 });
 
-
+export const {resetTransport} =transportSlice.actions;
 export default transportSlice.reducer;
