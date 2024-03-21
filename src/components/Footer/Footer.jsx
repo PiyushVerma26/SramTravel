@@ -6,7 +6,9 @@ function Footer() {
     <>
       <div className="bg-blue-800 text-white text-lg">
         <div className="flex gap-10 justify-center p-5">
-          <p>Terms of Use</p>
+          <NavLink to={"/terms"}>
+            <p>Terms of Use</p>
+          </NavLink>
           <NavLink to={"/privacy-policy"}>
             <p>Privacy-Policy</p>
           </NavLink>

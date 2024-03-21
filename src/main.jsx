@@ -14,6 +14,7 @@ import Flight from "./components/flights/Flight.jsx";
 import Transportation from "./components/Transport/Transportation.jsx";
 import Faq from "./components/Faq/Faq.jsx";
 import HotelDetail from "./components/Search/HotelDetail.jsx";
+import Terms from "./components/Terms/Terms.jsx";
 
 const router = createBrowserRouter([
   {
@@ -63,6 +64,10 @@ const router = createBrowserRouter([
       {
         path: "/privacy-policy",
         element: <PrivacyPolicy />,
+      },
+      {
+        path: "/terms",
+        element: <Terms />,
       },
     ],
   },
