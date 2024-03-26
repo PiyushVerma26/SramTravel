@@ -7,9 +7,6 @@ import Loading from "../Loading/Loading";
 function HoelSearch() {
   const error = useSelector((state) => state.hotel.error);
   
-
-  
-
   return <>
   
   

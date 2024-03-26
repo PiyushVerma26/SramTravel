@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState  } from "react";
 import HotelBook from "./HotelBook";
 import us from "../../assets/images/us.jpg";
-import Filter from "./Filter";
+import Filter from "./Filter.jsx";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchDetail } from "../../Features/DetailSlice";
 import { AiFillFilter } from "react-icons/ai";
 import { RxCross2 } from "react-icons/rx";
 import { useNavigate } from "react-router-dom";
-import Loading from "../Loading/Loading";
+ 
 
 function HotelCard() {
   const { data } = useSelector((state) => state.hotel);
@@ -18,7 +18,6 @@ function HotelCard() {
 
   const handleBookNow = (item) => {
     dispatch(fetchDetail(item));
-  
     navigate('/description');
   };
 

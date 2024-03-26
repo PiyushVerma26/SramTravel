@@ -11,7 +11,9 @@ const store = configureStore({
     detail:detailReducer,
     flight:flightReducer,
     transport:transportReducer
-  }
+  },
+ 
+  
 });
 
 export default store;
