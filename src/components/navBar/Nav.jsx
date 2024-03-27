@@ -37,7 +37,7 @@ function Nav() {
               className="tracking-wide font-customFont"
               // style={{ fontFamily: "BlinkMacSystemFont" }}
             >
-              TravelButler
+              SramTravels
             </p>
           </div>
         </NavLink>

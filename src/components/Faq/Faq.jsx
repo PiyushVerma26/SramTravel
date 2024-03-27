@@ -18,7 +18,7 @@ function Faq() {
     },
     {
       "How do I find out how much commission I will pay for bookings?":
-        "When you add your property to TravelButler.com you pay commission for each booking. The commission percentage will be shown at the ‘Agreement’ step of the registration process. At the end of each month, we’ll send you an invoice with the amount of commission owed.",
+        "When you add your property to SramTravels you pay commission for each booking. The commission percentage will be shown at the ‘Agreement’ step of the registration process. At the end of each month, we’ll send you an invoice with the amount of commission owed.",
     },
     {
       "Do I have to confirm all of my bookings?":

@@ -20,12 +20,12 @@ function Terms() {
           This summary isn’t part of our Terms, or a legal document. It’s just a
           simple explanation of our Terms. We encourage you to read each
           document in full. Some of the words in this summary have very specific
-          meanings, so check out the "TravelButler.com dictionary" at the end of
+          meanings, so check out the "SramTravels dictionary" at the end of
           these Terms.
         </h2>
-        <TermsTitle props="TravelButler.com dictionary" />
+        <TermsTitle props="SramTravels dictionary" />
         <h2>
-          “Account” means an account (with TravelButler.com or a Group Company),
+          “Account” means an account (with SramTravels or a Group Company),
           through which you can book Travel Experiences on our Platform.
         </h2>
         <h2 className="mt-2">
@@ -47,9 +47,9 @@ function Terms() {
           whether you pay for it now or later.
         </h2>
         <h2 className="mt-2">
-          “TravelButler.com,” “us,” “we,” or “our” means TravelButler.com B.V.
-          (for accommodation, flights, or attractions) or TravelButler.com
-          Transport Limited (for any ground transport service).
+          “SramTravels,” “us,” “we,” or “our” means SramTravels B.V. (for
+          accommodation, flights, or attractions) or SramTravels Transport
+          Limited (for any ground transport service).
         </h2>
         <h2 className="mt-2">
           “Booking Confirmation” (in the “Car rentals” section) means the
@@ -77,8 +77,8 @@ function Terms() {
         </h2>
         <h2 className="mt-2">
           “Connectivity Partner” means a company that allows properties and
-          TravelButler.com to communicate accommodation information and
-          customers’ booking data.
+          SramTravels to communicate accommodation information and customers’
+          booking data.
         </h2>
         <h2 className="mt-2">
           “Credit Card Cashback” means a benefit with a monetary value that can
@@ -94,9 +94,9 @@ function Terms() {
           (throughout Section E, “Service Provider” means the airline).
         </h2>
         <h2 className="mt-2">
-          “Group Company” means an affiliate of TravelButler.com – either a
-          direct shareholding of TravelButler.com or part of the Booking
-          Holdings Inc. group.
+          “Group Company” means an affiliate of SramTravels – either a direct
+          shareholding of SramTravels or part of the Booking Holdings Inc.
+          group.
         </h2>
         <h2 className="mt-2">
           “Intermediation Contract” (in the “Flights” section) means the
