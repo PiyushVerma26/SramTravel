@@ -16,7 +16,7 @@ function Dashboard() {
 
   return (
     <>
-      <div className="bg-slate-200 pb-11">
+      <div className="bg-blue-950 pb-11">
         <div className="lg:px-52 px-1 py-2 block  ">
           <TabBar />
         </div>

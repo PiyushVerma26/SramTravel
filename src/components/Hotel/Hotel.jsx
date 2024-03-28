@@ -20,7 +20,7 @@ function Hotel() {
 
   return (
     <FormCard>
-      <div className="lg:px-36 mx-auto text-center">
+      <div className="lg:px-36 mx-auto text-center text-white">
         <h1 className="text-3xl font-bold">Your perfect stay awaits, let's make memories together.</h1>
         <p className="text-xl font-bold">Discover unbeatable deals on hotels, cozy homes, and much more.</p>
       </div>

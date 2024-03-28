@@ -21,7 +21,7 @@ function Flight() {
   return (
     <>
       <FormCard>
-        <div className="lg:px-36 mx-auto text-center">
+        <div className="lg:px-36 mx-auto text-center text-white">
           <h1 className="text-3xl font-bold">
             Start an unforgettable journey, let's make lasting sky memories.
           </h1>

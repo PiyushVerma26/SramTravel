@@ -1,48 +1,47 @@
 import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { FaJetFighter } from "react-icons/fa6";
-import { LiaHotelSolid } from "react-icons/lia";
-import { FaCarAlt } from "react-icons/fa";
+ 
+import { IoIosBed ,IoIosJet,IoIosCar } from "react-icons/io";
 function TabBar() {
   const location = useLocation();
 
   return (
-    <div className="flex md:flex-row  justify-evenly min-h-28 items-center md:shadow-2xl w-full flex-wrap gap-10  px-5 py-2 md:rounded-2xl  bg-white  z-10">
+    <div className="flex md:flex-row  items-center flex-wrap gap-1  md:gap-3 py-2  z-10">
       <NavLink
-        to="/hotel"
-        className={`flex flex-col items-center text-lg text-center md:w-40 w-20 mx-3 ${
+        to={"/hotel"}
+        className={`flex flex-row items-center text-md text-center gap-1 md:p-3 py-2 px-1 ${
           location.pathname === "/hotel" || location.pathname === "/"
-            ? "scale-110 font-bold text-blue-800 border-black border-b-4"
-            : "text-black hover:bg-gray-200 hover:border-gray-200 hover:rounded-xl "
+            ? "font-bold  border-black  bg-white text-black rounded-xl md:py-3.5 py-2.5"
+            : "text-white  hover:border-white  border-2  rounded-lg border-gray-400"
         }`}
       >
-        <LiaHotelSolid className="text-3xl mb-1" /> Hotels
+        <IoIosBed className="text-md" /> Hotels
       </NavLink>
 
       <NavLink
         to={"/flight"}
         className={({ isActive }) =>
-          `  flex flex-col  items-center text-lg text-center md:w-40 w-20 mx-3 ${
+          ` flex flex-row items-center text-md text-center gap-1 md:p-3 p-2 ${
             isActive
-              ? "scale-110 font-bold text-blue-800   border-b-4 border-black"
-              : "text-black  hover:bg-gray-200 hover:border-gray-200 hover:rounded-xl "
+              ? "font-bold  border-black  bg-white text-black rounded-xl md:py-3.5 py-2.5"
+              : "text-white  hover:border-white  border-2  rounded-lg border-gray-400"
           }`
         }
       >
-        <FaJetFighter className="text-3xl mb-1" /> Flights
+        <IoIosJet className="text-md" /> Flights
       </NavLink>
 
       <NavLink
         to={"/transportation"}
         className={({ isActive }) =>
-          `  flex flex-col items-center text-lg text-center md:w-40 w-20 mx-3 ${
+          ` flex flex-row items-center text-md text-center gap-1 md:p-3 p-2 ${
             isActive
-              ? "scale-110 font-bold text-blue-800   border-b-4 border-black"
-              : "text-black  hover:bg-gray-200 hover:border-gray-200 hover:rounded-xl hover:p-1 "
+              ?"font-bold  border-black  bg-white text-black rounded-xl md:py-3.5 py-2.5 px-1"
+              : "text-white  hover:border-white  border-2  rounded-lg border-gray-400"
           }`
         }
       >
-        <FaCarAlt className="  text-3xl mb-1" />
+        <IoIosCar className="text-md" />
         Transportation
       </NavLink>
     </div>
