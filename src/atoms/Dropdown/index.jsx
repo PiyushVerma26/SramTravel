@@ -9,7 +9,7 @@ const Dropdown = ({ children, Trigger, styles }) => {
   return (
     <div className={`relative inline-block text-left ${styles}`}>
       <button type='button' onClick={toggleDropdown} aria-haspopup='true' aria-expanded={isOpen}>
-        <Trigger />
+        {Trigger ? <Trigger /> : null}
       </button>
 
       {isOpen && (
