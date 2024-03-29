@@ -14,6 +14,8 @@ import Terms from './components/Terms/Terms.jsx'
 
 // Pages
 import Home from './pages/Home'
+import Dev from './dev/index.jsx'
+import { devRoutes } from './dev/devRoutes.js'
 
 const router = createBrowserRouter([
   {
@@ -36,6 +38,17 @@ const router = createBrowserRouter([
         path: '/transportation',
         element: <Home />,
       },
+      {
+        path: '/dev',
+        element: <Dev />,
+      },
+      ...devRoutes.map((route) => {
+        const Page = route.page
+        return {
+          path: `/dev/${route.name}`,
+          element: <Page />,
+        }
+      }),
       {
         path: '/description',
         element: <HotelDetail />,
