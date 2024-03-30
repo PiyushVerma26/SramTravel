@@ -1,11 +1,11 @@
-import React from "react";
-import Nav from "./components/navBar/Nav";
-import { Outlet } from "react-router-dom";
-import Footer from "./components/Footer/Footer";
-import { useSelector } from "react-redux";
+import React from 'react'
+import Nav from './components/navBar/Nav'
+import { Outlet } from 'react-router-dom'
+import Footer from './components/Footer/Footer'
+import { useSelector } from 'react-redux'
 
 function Layout() {
-  const value = useSelector((state) => state.login.status);
+  const value = useSelector((state) => state.login.status)
   return (
     <>
       <Nav />
@@ -13,7 +13,7 @@ function Layout() {
       {/* {value && <Footer />} */}
       <Footer />
     </>
-  );
+  )
 }
 
-export default Layout;
+export default Layout
