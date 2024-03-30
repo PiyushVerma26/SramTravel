@@ -1,6 +1,5 @@
 import Test from './devPages/Test'
-import FormInput from '../atoms/Input'
-import InputError from '../atoms/InputError'
+import InputField from './devPages/Input'
 export const devRoutes = [
   {
     name: 'testing',
@@ -9,10 +8,6 @@ export const devRoutes = [
 
   {
     name: 'input',
-    page: FormInput,
-  },
-  {
-    name: 'danger',
-    page: InputError,
+    page: InputField,
   },
 ]
