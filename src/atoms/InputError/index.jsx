@@ -1,7 +1,7 @@
 import React from 'react';
 import { CgDanger as DangerIcon } from 'react-icons/cg';  
 
-const InputError = ({ errors, styles }) => {
+const InputError = ({ errors='This Field is reuired', styles }) => {
   const defaultStyles = {
     container: 'flex flex-row items-center gap-2 p-2 text-black',
     color:'text-black',
