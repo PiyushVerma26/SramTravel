@@ -1,45 +1,41 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
 export const searchHotel = createAsyncThunk('fetchHotels', async (data) => {
-  const response = await fetch('https://jsonplaceholder.typicode.com/posts');
-  return response.json();
-});
+  const response = await fetch('https://jsonplaceholder.typicode.com/posts')
+  return response.json()
+})
 const initialState = {
   isFetching: false,
-  data: null,  
+  data: null,
   error: '',
-  dataFetched:false
-};
+  dataFetched: false,
+}
 
 const hotelSlice = createSlice({
-  name: 'hotel', 
+  name: 'hotel',
   initialState,
-  reducers:{
-resetState:(state )=>{
-      state.isFetching = false;
-      state.data = null;
-      state.error = '';
-      state.dataFetched = false;
-}
+  reducers: {
+    resetState: (state) => {
+      state.isFetching = false
+      state.data = null
+      state.error = ''
+      state.dataFetched = false
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(searchHotel.fulfilled, (state, action) => {
-      state.isFetching = false;
-      state.data = action.payload;
-      state.error = '',
-      state.dataFetched=true
-    });
+      state.isFetching = false
+      state.data = action.payload
+      ;(state.error = ''), (state.dataFetched = true)
+    })
     builder.addCase(searchHotel.pending, (state) => {
-      state.isFetching = true,
-        state.dataFetched=false
-    });
-    builder.addCase(searchHotel.rejected, (state ,action ) => {
-      state.isFetching = false,
-      state.dataFetched=false,
-      state.error = action.payload
-    });
-  }
-});
+      ;(state.isFetching = true), (state.dataFetched = false)
+    })
+    builder.addCase(searchHotel.rejected, (state, action) => {
+      ;(state.isFetching = false), (state.dataFetched = false), (state.error = action.payload)
+    })
+  },
+})
 
-export default hotelSlice.reducer;
-export const { resetState } = hotelSlice.actions;
+export default hotelSlice.reducer
+export const { resetState } = hotelSlice.actions

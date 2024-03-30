@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react'
 
 function CustomOption() {
-  return <div>CustomOption</div>;
+  return <div>CustomOption</div>
 }
 
-export default CustomOption;
+export default CustomOption
