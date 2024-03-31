@@ -1,5 +1,7 @@
+import cardflight from './devPages/Cardflight'
+import cardshimmer from './devPages/Cardshimmer'
 import Test from './devPages/Test'
-import InputField from './devPages/Input'
+// import InputField from './devPages/Input'
 export const devRoutes = [
   {
     name: 'testing',
@@ -7,7 +9,11 @@ export const devRoutes = [
   },
 
   {
-    name: 'input',
-    page: InputField,
+    name: 'cardshimmer',
+    page: cardshimmer,
+  },
+  {
+    name: 'flightcard',
+    page: cardflight,
   },
 ]
