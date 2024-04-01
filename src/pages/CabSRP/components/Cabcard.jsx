@@ -2,12 +2,12 @@ import React from 'react';
 import Hotels from '../../../assets/images/Hotels.webp';
 import { NavLink } from 'react-router-dom';
 
-function Hotelcard() {
+function Cabcard() {
   const base='bg-white flex justify-between px-2 mt-1'
   const semiTitle='text-gray-600 text-sm  '
   const boldTitle='text-md font-bold'
   return (
-    <NavLink to={'https://www.google.com'} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 5 p-4">
+    <NavLink to={'https://www.google.com'} className="w-full md:w-1/2  p-4">
       <div className="relative">
         <img src={Hotels} className="w-full h-64 rounded-xl" alt="Hotel" />
       </div>
@@ -35,4 +35,4 @@ function Hotelcard() {
     </NavLink>
   );
 }
-export default Hotelcard;
+export default Cabcard;
