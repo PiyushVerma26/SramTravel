@@ -3,6 +3,7 @@ import cardshimmer from './devPages/Cardshimmer'
 import Test from './devPages/Test'
 import InputField from './devPages/Input'
 import HotelSrpCard from './devPages/HotelSRPCard'
+import CabSrpcard from './devPages/CabSRPCard'
 export const devRoutes = [
   {
     name: 'testing',
@@ -24,5 +25,9 @@ export const devRoutes = [
   {
     name: 'hotelcard',
     page: HotelSrpCard,
+  },
+  {
+    name: 'Cabcard',
+    page: CabSrpcard,
   },
 ]
