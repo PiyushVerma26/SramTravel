@@ -20,3 +20,11 @@
   src: url('../src/assets/Font/LuckiestGuy-Regular.ttf') format('truetype');
   ;
 }
+
+*{
+  outline: none;
+}
+
+.rdrDefinedRangesWrapper {
+  display: none;
+}

@@ -19,11 +19,14 @@ export default function Home() {
   return (
     <>
       <div className='bg-blue-950 pb-11'>
-        <div className='lg:px-52 px-1 py-2 block'>
+        <div className='xl:px-60 px-1 py-2'>
           <TabBar />
         </div>
-        <div className='md:px-12 px-2'>
-          <SearchForm />
+        <div className='px-2 md:px-12 xl:px-60 mt-6'>
+          <h1 className='text-white text-4xl font-bold'>Explore countless flight options with ease.</h1>
+          <div className='mt-10 pr-20'>
+            <SearchForm />
+          </div>
         </div>
       </div>
       <div className='md:pt-10 pt-4 bg-slate-50 px-4 pb-4'>
