@@ -1,30 +1,38 @@
 import React from 'react';
-import Hotels from '../../../../assets/images/Hotels.webp';
+import Hotels from '../../../../assets/images/Hotels.webp'
 import { NavLink } from 'react-router-dom';
 
-function Cabcard({ origin, destination, departureDate, returnDate, imageUrl }) {
+function Hotelcard({hotelName ,rating ,star,location,ratingCount,totalPrice ,basePrice ,tax,off}) {
+  const base='bg-white flex justify-between px-2 mt-1'
+  const semiTitle='text-gray-600 text-sm  '
+  const boldTitle='text-md font-bold'
   return (
     <NavLink to={'http://localhost:5173/hotel'} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
       <div className="relative">
-        <img src={imageUrl} className="w-full h-64 rounded-xl object-cover" alt="Cab" />
+        <img src={Hotels} className="w-full h-64 rounded-xl object-cover" alt="Hotel" />
       </div>
-      <div className="bg-white flex flex-col justify-between px-2 mt-1 sm:flex-row">
-        <div>
-          <h2 className="text-xl font-semibold text-gray-800">{origin}</h2>
-          <p className="text-gray-600">{destination}</p>
-        </div>
-        <div className="mt-4 sm:mt-0">
-          <p className="text-gray-600">Departure: {departureDate}</p>
-          <p className="text-gray-600">Return: {returnDate}</p>
-        </div>
+      <div className= {`${base}`} >
+        <p className= {`${boldTitle}`}>{hotelName}</p>
+        <p className="text-gray-600 bg-slate-200 px-3 rounded-lg font-bold">{rating}</p>
       </div>
-      <div className="px-2 sm:flex sm:justify-between">
-        <button className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600">
-          Book Now
-        </button>
+      <div className= {`${base}`} >
+         <p className= {`${semiTitle}`}>{star}-star hotel .<span>{location}</span></p>
+         <p className={`${semiTitle}`} >{ratingCount}+ ratings </p>
       </div>
+
+      <div className="px-2">
+          <span className={boldTitle}>{basePrice}</span>
+           <span className={`${semiTitle}`}> + {tax} tax</span>
+           <span className={semiTitle}> /night</span>
+     </div>
+      
+     <div className="px-2">
+          <span className={semiTitle}><s>{totalPrice}</s></span>
+          <span className={`${semiTitle}`}> {off} % off</span>
+          <span className="text-sm"> + Additional bank discounts </span>
+     </div>
+       
     </NavLink>
   );
 }
-
-export default Cabcard;
+export default Hotelcard;
