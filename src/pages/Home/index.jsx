@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <>
       <div className='bg-blue-950 pb-11'>
-        <div className='lg:px-52 px-1 py-2 block'>
+        <div className='xl:px-60 px-1 py-2'>
           <TabBar />
         </div>
         <div className='px-2 md:px-12 xl:px-60 mt-6'>

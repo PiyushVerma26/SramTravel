@@ -1,22 +1,27 @@
-import { useState } from 'react'
+import { useEffect, useRef } from 'react'
 
-const Dropdown = ({ children, Trigger, styles }) => {
-  const [isOpen, setIsOpen] = useState(false)
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen)
+const Dropdown = ({ isOpen, setOpen, children, styles }) => {
+  const dropdownRef = useRef(null)
+
+  function handleOutsideClick(e) {
+    if (isOpen && !dropdownRef.current?.contains(e.target)) {
+      setOpen(false)
+    }
   }
 
-  return (
-    <div className={`relative inline-block text-left ${styles}`}>
-      <button type='button' onClick={toggleDropdown} aria-haspopup='true' aria-expanded={isOpen}>
-        {Trigger ? <Trigger /> : null}
-      </button>
+  useEffect(() => {
+    if (isOpen) window.addEventListener('mousedown', handleOutsideClick)
+    return () => {
+      window.removeEventListener('mousedown', handleOutsideClick)
+    }
+  }, [isOpen])
 
-      {isOpen && (
-        <div className={`absolute rounded-md shadow-lg bg-white ${styles}`} role='menu' aria-orientation='vertical'>
-          {children}
-        </div>
-      )}
+  if (!isOpen) return null
+  return (
+    <div className={`relative text-left z-10 ${styles}`} ref={dropdownRef}>
+      <div className={`absolute rounded-md shadow-lg bg-white ${styles}`} role='menu' aria-orientation='vertical'>
+        {children}
+      </div>
     </div>
   )
 }
