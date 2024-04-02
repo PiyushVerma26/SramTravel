@@ -5,7 +5,6 @@ import { useSelector } from 'react-redux'
 import TabBar from './components/TabBar'
 import Trending from '../../components/Destinations/Trending'
 import HotelSearch from '../../components/Search/HoelSearch'
-import FlightCard from '../../components/FlightSearch/FlightCard'
 import TransportSearch from '../../components/TransportSearch/TransportSearch'
 import getSearchForm from './utils/getSearchForm'
 

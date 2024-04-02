@@ -2,23 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @font-face {
   font-family: 'protest';
   src: url('../src/assets/Font/ProtestRevolution-Regular.ttf') format('truetype');
-  ;
 }
 
 @font-face {
   font-family: 'Barri';
   src: url('../src/assets/Font/Barriecito-Regular.ttf') format('truetype');
-  ;
 }
 
 @font-face {
   font-family: 'Lucky';
   src: url('../src/assets/Font/LuckiestGuy-Regular.ttf') format('truetype');
-  ;
 }
 
 *{
