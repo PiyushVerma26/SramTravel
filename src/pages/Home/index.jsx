@@ -21,6 +21,8 @@ export default function Home() {
         <div className='lg:px-52 px-1 py-2 block'>
           <TabBar />
         </div>
+        <div className='md:px-12 px-2'>
+          <SearchForm />
         <div className='px-2 md:px-12 xl:px-60 mt-6'>
           <h1 className='text-white text-4xl font-bold'>Explore countless flight options with ease.</h1>
           <div className='mt-10'>
