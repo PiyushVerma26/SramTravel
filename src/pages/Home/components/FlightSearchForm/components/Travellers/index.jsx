@@ -73,7 +73,7 @@ export default function Travellers({ labelText, labelStyles, onTravellersChange,
         inputStyles='cursor-pointer'
         onClick={toggleDropdown}
       />
-      <Dropdown isOpen={isDropdownOpen} styles={`w-full ${dropdownStyles}`} setOpen={setIsDropdownOpen}>
+      <Dropdown isOpen={isDropdownOpen} styles={`${dropdownStyles}`} setOpen={setIsDropdownOpen}>
         <div className='px-3'>
           <OptionDropdown
             labelText='Cabin Class'

@@ -144,7 +144,7 @@ export default function FlightSearchForm() {
             labelText='Travellers'
             labelStyles='rounded-br-2xl lg:rounded-tr-2xl'
             containerStyles='w-[calc(50%-2px)]'
-            dropdownStyles='-translate-x-[20%] w-[125%] sm:-translate-x-0 sm:w-full'
+            dropdownStyles='-translate-x-[20%] w-[125%] md:-translate-x-0 md:w-full'
             onTravellersChange={setTravellers}
           />
         </div>
