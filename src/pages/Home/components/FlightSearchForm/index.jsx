@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import LocationInput from '../../common/LocationInput'
 import { GoArrowSwitch as ArrowIcons } from 'react-icons/go'
 import DatePicker from '../../common/DatePicker'
@@ -18,6 +18,8 @@ export default function FlightSearchForm() {
       infant: 0,
     },
   })
+
+  const [destErrors, setDestErrors] = useState({ from: null, to: null })
 
   const swapIconRef = useRef()
   function onFromCitySelect(dest) {
@@ -60,8 +62,33 @@ export default function FlightSearchForm() {
   }
 
   function onSubmit() {
-    console.log({ isOneway, selectedDestinations, dates, travellers })
+    if (!selectedDestinations.from) {
+      setDestErrors((destErrors) => {
+        return { ...destErrors, from: 'This field is required' }
+      })
+    }
+    if (!selectedDestinations.to) {
+      setDestErrors((destErrors) => {
+        return { ...destErrors, to: 'This field is required' }
+      })
+    }
+    if (selectedDestinations.from && selectedDestinations.to) {
+      console.log({ isOneway, selectedDestinations, dates, travellers })
+    }
   }
+
+  useEffect(() => {
+    if (destErrors.from && selectedDestinations.from) {
+      setDestErrors((destErrors) => {
+        return { ...destErrors, from: null }
+      })
+    }
+    if (destErrors.to && selectedDestinations.to) {
+      setDestErrors((destErrors) => {
+        return { ...destErrors, to: null }
+      })
+    }
+  }, [selectedDestinations])
 
   return (
     <div className='flex flex-col gap-2'>
@@ -74,11 +101,12 @@ export default function FlightSearchForm() {
         <div className='relative w-full'>
           <LocationInput
             intialSelectedDestination={selectedDestinations.from}
+            error={destErrors.from}
             labelText={'From'}
             inputPlaceholder={'Country, city or Airport'}
             labelStyles='rounded-tl-2xl rounded-tr-2xl lg:rounded-bl-2xl lg:rounded-tr-none'
             containerStyles='w-full'
-            dropdownStyles='min-w-[22rem]'
+            dropdownStyles='min-w-full max-w-full'
             getResponse={getFlightDestinations}
             onLocationSelect={onFromCitySelect}
             renderList={renderFlightList}
@@ -92,10 +120,11 @@ export default function FlightSearchForm() {
         </div>
         <LocationInput
           intialSelectedDestination={selectedDestinations.to}
+          error={destErrors.to}
           labelText={'To'}
           inputPlaceholder={'Country, city or Airport'}
           containerStyles='w-full'
-          dropdownStyles='min-w-[22rem]'
+          dropdownStyles='min-w-full max-w-full'
           getResponse={getFlightDestinations}
           onLocationSelect={onToCitySelect}
           renderList={renderFlightList}
@@ -108,18 +137,20 @@ export default function FlightSearchForm() {
             labelStyles='text-nowrap rounded-bl-2xl lg:rounded-bl-none'
             inputPlaceholder={`Add Date${isOneway ? '' : 's'}`}
             containerStyles='w-[calc(50%-2px)]'
+            dropdownStyles=''
             onPickDate={onPickDate}
           />
           <Travellers
             labelText='Travellers'
             labelStyles='rounded-br-2xl lg:rounded-tr-2xl'
             containerStyles='w-[calc(50%-2px)]'
+            dropdownStyles='-translate-x-[20%] w-[125%] sm:-translate-x-0 sm:w-full'
             onTravellersChange={setTravellers}
           />
         </div>
         <button
           onClick={onSubmit}
-          className='w-full min-w-24 bg-blue-700 text-white py-2 rounded-lg text-xl font-bold mt-10 self-center lg:mt-0 lg:h-16 lg:font-normal lg:ml-8 lg:max-w-24'
+          className='w-full min-w-24 bg-blue-700 text-white py-2 rounded-lg text-xl font-bold mt-10 self-center lg:mt-0 lg:h-16 lg:font-semibold lg:text-base lg:max-w-24 xl:ml-2'
         >
           Search
         </button>

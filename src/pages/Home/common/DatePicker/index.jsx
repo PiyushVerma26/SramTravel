@@ -21,7 +21,7 @@ export default function DatePicker({
 }) {
   const [dateInput, setDateInput] = useState('')
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
-  const [date, setDate] = useState(null)
+  const [date, setDate] = useState(new Date())
   const [range, setRange] = useState([
     {
       startDate: new Date(),
@@ -35,7 +35,7 @@ export default function DatePicker({
   }
 
   useEffect(() => {
-    if (!date || isRangeSelector) return
+    if (isRangeSelector) return
     const selectedDate = new Date(date)
     const formattedDate = `${selectedDate.getDate()}/${selectedDate.getMonth()}/${selectedDate.getFullYear()}`
     onPickDate([date])

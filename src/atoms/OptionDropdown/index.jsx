@@ -20,7 +20,7 @@ function Option({ opt, onSelect, isSelected }) {
 export default function OptionDropdown({ labelText, selected, options, onSelect, containerStyles, labelStyles }) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
 
-  function toggleDropdown() {
+  function toggleDropdown(e) {
     setIsDropdownOpen(!isDropdownOpen)
   }
 
@@ -30,22 +30,21 @@ export default function OptionDropdown({ labelText, selected, options, onSelect,
   }
 
   return (
-    <div className={`px-4 py-6 ${containerStyles ? containerStyles : ''}`}>
-      <label>
-        <div className='flex flex-col gap-2 cursor-pointer'>
-          <h1>{labelText}</h1>
-          <button
-            className='border rounded-lg w-full flex justify-between items-center p-2 text-gray-700'
-            aria-haspopup='listbox'
-            aria-expanded={isDropdownOpen}
-            onClick={toggleDropdown}
-          >
-            <h2 className={`${labelStyles ? labelStyles : ''}`}>{selected}</h2>
-            <DropdownIcon />
-          </button>
-        </div>
-      </label>
-      <Dropdown isOpen={isDropdownOpen} styles='w-full'>
+    <div className={`py-6 ${containerStyles ? containerStyles : ''}`}>
+      <div className='flex flex-col gap-2 cursor-pointer'>
+        <h1>{labelText}</h1>
+        <button
+          type='button'
+          className='border rounded-lg w-full flex justify-between items-center p-2 text-gray-700'
+          aria-haspopup='listbox'
+          aria-expanded={isDropdownOpen}
+          onClick={toggleDropdown}
+        >
+          <h2 className={`${labelStyles ? labelStyles : ''}`}>{selected}</h2>
+          <DropdownIcon />
+        </button>
+      </div>
+      <Dropdown isOpen={isDropdownOpen} setOpen={setIsDropdownOpen} styles='w-full'>
         <ul role='listbox'>
           {options.map((opt) => {
             return <Option opt={opt} onSelect={onOptionSelect} isSelected={opt === selected} key={opt} />

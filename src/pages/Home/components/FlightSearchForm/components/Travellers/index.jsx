@@ -21,7 +21,7 @@ function TravellersCount({ traveller, count, onCountChange }) {
   }
 
   return (
-    <div className='flex justify-between px-2 py-3'>
+    <div className='flex justify-between py-2'>
       <h1>{traveller}</h1>
       <div className='flex gap-2 items-center'>
         <MinusIcon className='cursor-pointer' onClick={removeTraveller} />
@@ -32,7 +32,7 @@ function TravellersCount({ traveller, count, onCountChange }) {
   )
 }
 
-export default function Travellers({ labelText, labelStyles, onTravellersChange, containerStyles }) {
+export default function Travellers({ labelText, labelStyles, onTravellersChange, containerStyles, dropdownStyles }) {
   // Todo: add in constants
   const CabinClassOption = ['Economy', 'Premium Economy', 'Business Class', 'First Class']
 
@@ -73,16 +73,18 @@ export default function Travellers({ labelText, labelStyles, onTravellersChange,
         inputStyles='cursor-pointer'
         onClick={toggleDropdown}
       />
-      <Dropdown isOpen={isDropdownOpen} styles='w-full' setOpen={setIsDropdownOpen}>
-        <OptionDropdown
-          labelText='Cabin Class'
-          selected={selectedCabinClass}
-          options={CabinClassOption}
-          onSelect={onCabinClassSelect}
-        />
-        <TravellersCount traveller='Adults' count={adultCount} onCountChange={setAdultCount} />
-        <TravellersCount traveller='Children' count={childrenCount} onCountChange={setChildrenCount} />
-        <TravellersCount traveller='Infants' count={infantCount} onCountChange={setInfantCount} />
+      <Dropdown isOpen={isDropdownOpen} styles={`w-full ${dropdownStyles}`} setOpen={setIsDropdownOpen}>
+        <div className='px-3'>
+          <OptionDropdown
+            labelText='Cabin Class'
+            selected={selectedCabinClass}
+            options={CabinClassOption}
+            onSelect={onCabinClassSelect}
+          />
+          <TravellersCount traveller='Adults' count={adultCount} onCountChange={setAdultCount} />
+          <TravellersCount traveller='Children' count={childrenCount} onCountChange={setChildrenCount} />
+          <TravellersCount traveller='Infants' count={infantCount} onCountChange={setInfantCount} />
+        </div>
       </Dropdown>
     </div>
   )

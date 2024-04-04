@@ -19,7 +19,7 @@ const Dropdown = ({ isOpen, setOpen, children, styles }) => {
   if (!isOpen) return null
   return (
     <div className={`relative text-left z-10 ${styles}`} ref={dropdownRef}>
-      <div className={`absolute rounded-md shadow-lg bg-white ${styles}`} role='menu' aria-orientation='vertical'>
+      <div className={`absolute rounded-md mt-1 shadow-lg bg-white ${styles}`} role='menu' aria-orientation='vertical'>
         {children}
       </div>
     </div>

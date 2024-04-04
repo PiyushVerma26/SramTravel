@@ -4,6 +4,7 @@ import LabelInput from '../../../../components/LabelInput'
 
 export default function LocationInput({
   intialSelectedDestination,
+  error,
   containerStyles,
   labelStyles,
   dropdownStyles,
@@ -62,18 +63,15 @@ export default function LocationInput({
     <div className={`${containerStyles}`}>
       <LabelInput
         input={input}
+        error={error}
         onChange={onUserInput}
         onClick={toggleDropdown}
         labelStyles={labelStyles}
         labelText={labelText}
         inputPlaceholder={inputPlaceholder}
       />
-      <Dropdown isOpen={isDropdownOpen} setOpen={setIsDropdownOpen}>
-        {response && (
-          <ul className={`py-4 ${dropdownStyles}`}>
-            {response && response.map((dest) => renderList(dest, onLocationPick))}
-          </ul>
-        )}
+      <Dropdown isOpen={isDropdownOpen} setOpen={setIsDropdownOpen} styles={dropdownStyles}>
+        {response && <ul className={`py-4`}>{response && response.map((dest) => renderList(dest, onLocationPick))}</ul>}
       </Dropdown>
     </div>
   )
