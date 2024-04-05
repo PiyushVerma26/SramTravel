@@ -1,0 +1,12 @@
+#!/bin/sh
+
+BRANCH=$(git rev-parse --abbrev-ref HEAD)
+PROTECTED_BRANCH="main"
+
+if [[ "$BRANCH" == "$PROTECTED_BRANCH" ]]; then
+  echo "❌ Pushing directly to '$PROTECTED_BRANCH' is not allowed."
+  echo "   Create a pull request instead."
+  exit 1
+fi
+
+exit 0
