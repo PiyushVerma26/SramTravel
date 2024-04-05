@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -21,6 +22,17 @@
   outline: none;
 }
 
+
+/* Hacks for react-date-range (Todo: Remove when package changes) */
+
+/* Removes option sidebar */
 .rdrDefinedRangesWrapper {
   display: none;
+}
+
+/* Reduces size for small screens */
+@media screen and (max-width: 345px) {
+  .rdrMonths.rdrMonthsVertical .rdrMonth {
+    width: 100%;
+  }
 }
