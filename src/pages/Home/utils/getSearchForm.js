@@ -1,10 +1,10 @@
-import Flight from '../../../components/flights/Flight'
+import FlightSearchForm from '../components/FlightSearchForm'
 import Hotel from '../../../components/Hotel/Hotel'
 import Transportation from '../../../components/Transport/Transportation'
 
 const COMPONENT_MAP = {
   '/hotel': Hotel,
-  '/flight': Flight,
+  '/flight': FlightSearchForm,
   '/transportation': Transportation,
 }
 
